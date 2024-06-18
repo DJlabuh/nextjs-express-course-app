@@ -1,5 +1,6 @@
-import Link from 'next/link';
 import { getAllArticles } from './(server)/api';
+import { ROUTING } from './routing';
+import { AppLink } from './shared/components/app-link';
 
 export default async function Home() {
   const allArticles = await getAllArticles();
@@ -9,7 +10,7 @@ export default async function Home() {
       <ul>
         {allArticles.map(article => (
           <li key={article.name}>
-            {article.header}
+            <AppLink href={ROUTING.article(article.name)}>{article.header}</AppLink>
           </li>
         ))}
       </ul>

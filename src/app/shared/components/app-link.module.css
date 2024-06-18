@@ -1,0 +1,14 @@
+.root {
+  color: var(--txt-color-main);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.root:hover {
+  color: rgb(6, 216, 108);
+  text-decoration: underline;
+}
+
+.root:active {
+  color: red;
+}
