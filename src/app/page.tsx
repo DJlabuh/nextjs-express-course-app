@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { getAllArticles } from './(server)/api';
 
 export default async function Home() {
@@ -7,7 +8,9 @@ export default async function Home() {
       <h1>Blog</h1>
       <ul>
         {allArticles.map(article => (
-          <li key={article.name}>{article.header}</li>
+          <li key={article.name}>
+            {article.header}
+          </li>
         ))}
       </ul>
     </>

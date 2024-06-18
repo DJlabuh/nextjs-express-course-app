@@ -1,9 +1,9 @@
-// import { ERRORS } from '../errors';
+import { ERRORS } from '../errors';
 import articles from './db.json';
 import { delayed } from './delay';
 
 export function getAllArticles() {
-  return delayed(articles, { timeout: 1500 });
+  return delayed(articles);
 }
 
 // export function getArticleByName(articleName: string) {
