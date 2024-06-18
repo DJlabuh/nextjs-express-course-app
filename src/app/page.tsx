@@ -1,7 +1,15 @@
-export default function Home() {
+import { getAllArticles } from './(server)/api';
+
+export default async function Home() {
+  const allArticles = await getAllArticles();
   return (
     <>
-      <p>Hello world!!</p>
+      <h1>Blog</h1>
+      <ul>
+        {allArticles.map(article => (
+          <li key={article.name}>{article.header}</li>
+        ))}
+      </ul>
     </>
   );
 }
